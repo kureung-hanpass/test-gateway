@@ -1,0 +1,10 @@
+GET http://localhost:8080/get
+
+###
+GET http://localhost:8080/routes
+
+###
+GET http://httpbin.org/get
+
+###
+GET http://httpbin.org
