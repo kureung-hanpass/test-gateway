@@ -26,7 +26,7 @@ public class ApiPathRouteLocatorImpl implements RouteLocator {
             .map(apiRoute -> routesBuilder.route(predicateSpec -> setPredicateSpec(apiRoute, predicateSpec)))
             .collectList()
             .flatMapMany(builders -> routesBuilder.build()
-                .getRoutes());
+                    .getRoutes());
     }
 
     private Buildable<Route> setPredicateSpec(ApiRoute apiRoute, PredicateSpec predicateSpec) {
@@ -48,8 +48,8 @@ public class ApiPathRouteLocatorImpl implements RouteLocator {
         private static final List<ApiRoute> list = new ArrayList();
 
         static {
-            list.add(new ApiRoute("https://www.naver.com", 8));
-            list.add(new ApiRoute("https://www.daum.net", 2));
+            list.add(new ApiRoute("http://localhost:8090", 8));
+            list.add(new ApiRoute("http://localhost:8070", 2));
         }
 
         public Repository() {
@@ -65,9 +65,9 @@ public class ApiPathRouteLocatorImpl implements RouteLocator {
 
         public void add() {
             list.clear();
-            list.add(new ApiRoute("http://httpbin.org", 1));
-            list.add(new ApiRoute("https://www.naver.com", 5));
-            list.add(new ApiRoute("http://daplus.net", 4));
+            list.add(new ApiRoute("http://localhost:8090", 1));
+            list.add(new ApiRoute("http://localhost:8070", 5));
+            list.add(new ApiRoute("http://localhost:8060", 4));
         }
     }
 }
